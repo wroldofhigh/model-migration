@@ -11,12 +11,29 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+   
+        
+        return Student::with(['grade' => function($query){
+            return $query->where('grade','>=','90');
+
+
+        
+        
+        
+        return $query->where('grade','>=','90');
+
+    } ])  ->get();
+
+
+
+
     }
 
     /**
      * Show the form for creating a new resource.
      */
+
+  
     public function create()
     {
         //
